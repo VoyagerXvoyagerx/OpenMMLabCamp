@@ -8,7 +8,7 @@
 
 数据预览
 
-![标注好的图像示例](./c "fig1")
+![标注好的图像示例](/detection/ionogram_detection/20130401070700.jpg "fig1")
 
 数据集中各类别实例数量
 
@@ -54,3 +54,6 @@ test 646 images
 现有的实验结果中，YOLOv6-l的验证集mAP最高。
 
 对比loss下降的过程可以发现，使用预训练权重时，loss下降得更快。可见即使是自然图像数据集上预训练的模型，在雷达图像数据集上微调，也可以加快收敛。
+
+![标注好的图像示例](/detection/ionogram_detection/loss.png "fig2")
+
