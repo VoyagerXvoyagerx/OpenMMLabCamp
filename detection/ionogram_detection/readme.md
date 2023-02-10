@@ -98,9 +98,11 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 --wait-time 1
 ```
 
-10. 测试模型param、FLOPs 
- 
-[脚本](https://github.com/open-mmlab/mmyolo/blob/2875d8b64e75b34c2a7f4cf134f9348c2f018ed9/tools/analysis_tools/get_flops.py) 来自一个没有被 merge 的 pr
+10. 测试模型param、FLOPs
+
+[参考脚本](https://github.com/open-mmlab/mmyolo/blob/2875d8b64e75b34c2a7f4cf134f9348c2f018ed9/tools/analysis_tools/get_flops.py) 一个没有被 merge 的 pr
+
+一键打印所有模型[get_flops.ipynb](/detection/ionogram_detection/tools/get_flops.ipynb)
 
 ## 实验结果
 ---
@@ -120,13 +122,13 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 | rtmdet-l | 100(80) | 79.96 | 52.26 | Coco | 0.601 |  | rtmdet_l_syncbn_fast_1xb32-100e_ionogram |
 | rtmdet-x | 100(94) | 141 | 94.79 | Coco | 0.603 |  | rtmdet_x_syncbn_fast_1xb32-100e_ionogram |
 
-\* FLOPs 和 Params 使用 [fvscore](https://github.com/facebookresearch/fvcore/blob/main/docs/flop_count.md>) 计算得到。
-
-[训练过程可视化](https://wandb.ai/19211416/mmyolo-tools/reports/Object-Detection-for-Ionogram-Automatic-Scaling--VmlldzozNTI4NTk5) 
+[训练过程可视化](https://wandb.ai/19211416/mmyolo-tools/reports/Object-Detection-for-Ionogram-Automatic-Scaling--VmlldzozNTI4NTk5)
 
 现有的实验结果中，YOLOv6-l的验证集mAP最高。
 
-对比loss下降的过程可以发现，使用预训练权重时，loss下降得更快。可见即使是自然图像数据集上预训练的模型，在雷达图像数据集上微调，也可以加快收敛。
+对比loss下降的过程可以发现，使用预训练权重时，loss下降得更快。可见即使是自然图像数据集上预训练的模型，在雷达图像数据集上微调，也可以加快收敛
+
+![loss](/detection/ionogram_detection/loss.png)
 
 ## 自定义数据集修改经验
 
