@@ -4,11 +4,11 @@
 
 电离层频高图是获取电离层实时信息最重要的途径。电离层不规则结构变化特征研究对检测电离层不规则结构，精准提取和度量电离层各层轨迹和关键参数，具有非常重要的研究意义。
 
-利用中国科学院在海南、武汉、怀来获取的不同季节的4311张频高图建立数据集，人工标注出E层、Es-c层、Es-l层、F1层、F2层、Spread F层共6种结构。[download](https://drive.google.com/file/d/1MZUonB6E0o7lq_NndI-F3PEVkQH3C8pz/view?usp=sharing) 
+利用中国科学院在海南、武汉、怀来获取的不同季节的4311张频高图建立数据集，人工标注出E层、Es-c层、Es-l层、F1层、F2层、Spread F层共6种结构。[download](https://drive.google.com/file/d/1MZUonB6E0o7lq_NndI-F3PEVkQH3C8pz/view?usp=sharing)
 
 数据预览
 
-![标注好的图像示例](/detection/ionogram_detection/20130401070700.jpg "fig1")
+![标注好的图像示例](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/blob/main/detection/ionogram_detection/20130401070700.jpg "fig1")
 
 数据集中各类别实例数量
 
