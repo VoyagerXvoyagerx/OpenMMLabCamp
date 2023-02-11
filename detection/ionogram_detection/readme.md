@@ -12,7 +12,7 @@
 
 ![标注好的图像示例](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/blob/main/detection/ionogram_detection/20130401070700.jpg "fig1")
 
- 1. 使用MMYOLO提供的脚本将 labelme 的 label 转换为 COCO label
+1. 使用MMYOLO提供的脚本将 labelme 的 label 转换为 COCO label
 
 ```shell
 python tools/dataset_converters/labelme2coco.py --img-dir ./Iono4311/images --labels-dir ./Iono4311/labels --out ./Iono4311/annotations/annotations_all.json
@@ -24,7 +24,7 @@ python tools/dataset_converters/labelme2coco.py --img-dir ./Iono4311/images --la
 python tools/analysis_tools/browse_coco_json.py --img-dir ./Iono4311/images --ann-file ./Iono4311/annotations/annotations_all.json
 ```
 
-3. 划分训练集、验证集、测试集
+3. 划分训练集、验证集、测试集，设置70%的图片为训练集，15%作为验证集，15%为测试集
 
 ```shell
 python tools/misc/coco_split.py --json ./Iono4311/annotations/annotations_all.json \
@@ -34,7 +34,7 @@ python tools/misc/coco_split.py --json ./Iono4311/annotations/annotations_all.js
                                 --seed 14
 ```
 
-数据集中各类别实例数量
+数据集中各类别实例数量，notebook代码在[/tools/dataset_analysis.ipynb](OpenMMLabCamp/detection/ionogram_detection/tools/dataset_analysis.ipynb)
 
 ```python
 annotations_all 4311 images
@@ -55,6 +55,7 @@ test 646 images
 ```
 
 4. 配置文件
+
 配置文件在路径/config/custom_dataset下
 
 5. 数据集可视化分析
@@ -65,6 +66,8 @@ python tools/analysis_tools/dataset_analysis.py configs/custom_dataset/yolov5_s-
 ```
 
 ![可视化分析](/detection/ionogram_detection/Dataset_bbox_area.jpg)
+
+E、Es-l、Esc、F1类别以小目标居多，F2、Fspread类主要是中等大小目标。
 
 6. 可视化config中的数据处理部分
 
@@ -84,6 +87,7 @@ python tools/analysis_tools/optimize_anchors.py configs/custom_dataset/yolov5_s-
 ```
 
 8. 训练
+
 ```shell
 python tools/train.py configs/custom_dataset/yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram_pre0.py
 ```
@@ -98,11 +102,11 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 --wait-time 1
 ```
 
-10. 测试模型param、FLOPs
+10. 测试模型Param、FLOPs
 
 [参考脚本](https://github.com/open-mmlab/mmyolo/blob/2875d8b64e75b34c2a7f4cf134f9348c2f018ed9/tools/analysis_tools/get_flops.py) 一个没有被 merge 的 pr
 
-一键打印所有模型[get_flops.ipynb](/detection/ionogram_detection/tools/get_flops.ipynb)
+编写一键打印所有模型的notebook[get_flops.ipynb](/detection/ionogram_detection/tools/get_flops.ipynb)
 
 ## 实验结果
 ---
@@ -130,7 +134,7 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 
 ![loss](/detection/ionogram_detection/loss.png)
 
-## 自定义数据集修改经验
+## 自定义数据集config修改经验
 
 ---
 
@@ -142,7 +146,7 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 ### 模型尺寸不变，修改策略时
 
 继承自修改过的config
-根据需要修改
+根据实验需要修改config内容
 
 ### 修改模型尺寸时
 
