@@ -10,6 +10,12 @@
 
 ## object detection
 
-[基础作业](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/tree/main/detection/balloon) 
+[基础作业](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/tree/main/detection/balloon)
 
-[进阶作业](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/tree/main/detection/ionogram_detection) 
+[进阶作业](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/tree/main/detection/ionogram_detection)
+
+## semantic segmentation
+
+[基础作业](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/tree/main/segmentation/iccv09Data)
+
+[进阶作业](https://github.com/VoyagerXvoyagerx/Ionogram)
