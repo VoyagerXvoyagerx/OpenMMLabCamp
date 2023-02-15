@@ -130,18 +130,17 @@ python tools/test.py ./configs/custom_dataset/yolov6_l_syncbn_fast_1xb32-100e_io
 
 | Model | epoch(best) | FLOPs(G) | Params(M) | pretrain | val mAP | test mAP | config |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| YOLOv5-s | 50(50) | 7.95 | 7.04 | Coco | 0.579 |  | yolov5_s-v61_syncbn_fast_1xb32-50e_ionogram |
-| YOLOv5-s | 100(75) | 7.95 | 7.04 | Coco | 0.577  |  | yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram |
-| YOLOv5-s | 200(145) | 7.95 | 7.04 | None | 0.565 |  | yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram_pre0 |
+| YOLOv5-s | 50(50) | 7.95 | 7.04 | Coco | 0.579 | 0.567 | yolov5_s-v61_syncbn_fast_1xb32-50e_ionogram |
+| YOLOv5-s | 100(75) | 7.95 | 7.04 | Coco | 0.577  | 0.584 | yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram |
+| YOLOv5-s | 200(145) | 7.95 | 7.04 | None | 0.565 | 0.581 | yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram_pre0 |
 | YOLOv5-m | 100(70) | 24.05 | 20.89 | Coco | 0.587  | 0.586 | yolov5_m-v61_syncbn_fast_1xb32-100e_ionogram |
-| YOLOv6-s | 100(54) | 24.2 | 18.84 | Coco | 0.584 |  | yolov6_s_syncbn_fast_1xb32-100e_ionogram |
-| YOLOv6-s | 200(188) | 24.2 | 18.84 | None | 0.557 |  | yolov6_s_syncbn_fast_1xb32-100e_ionogram_pre0 |
-| YOLOv6-m | 100(76) | 37.08 | 44.42 | Coco | 0.590 |  | yolov6_m_syncbn_fast_1xb32-100e_ionogram |
+| YOLOv6-s | 100(54) | 24.2 | 18.84 | Coco | 0.584 | 0.594 | yolov6_s_syncbn_fast_1xb32-100e_ionogram |
+| YOLOv6-s | 200(188) | 24.2 | 18.84 | None | 0.557 | 0.564 | yolov6_s_syncbn_fast_1xb32-100e_ionogram_pre0 |
+| YOLOv6-m | 100(76) | 37.08 | 44.42 | Coco | 0.590 | 0.590 | yolov6_m_syncbn_fast_1xb32-100e_ionogram |
 | YOLOv6-l | 100(76) | 71.33 | 58.47 | Coco | 0.605 | 0.597 | yolov6_l_syncbn_fast_1xb32-100e_ionogram |
-| YOLOv7-l | 100(88) | 52.42 | 37.22 | Coco | 0.590 |  | yolov7_l_syncbn_fast_1xb32-100e_ionogram |
-| YOLOv7-x | 100(58) | 94.27 | 70.85 | Coco | 0.602 |  | yolov7_x_syncbn_fast_1xb32-100e_ionogram |
-| rtmdet-l | 100(80) | 79.96 | 52.26 | Coco | 0.601 |  | rtmdet_l_syncbn_fast_1xb32-100e_ionogram |
-| rtmdet-x | 100(94) | 141 | 94.79 | Coco | 0.603 |  | rtmdet_x_syncbn_fast_1xb32-100e_ionogram |
+| YOLOv7-tiny | 100(78) | 6.57 | 6.02 | Coco | 0.549 | 0.568 | yolov7_tiny_syncbn_fast_1xb32-100e_ionogram |
+| YOLOv7-x | 100(58) | 94.27 | 70.85 | Coco | 0.602 | 0.595 | yolov7_x_syncbn_fast_1xb32-100e_ionogram |
+| rtmdet-s | 100(64) | 14.76 | 8.86 | Coco | 0.581 | 0.571 | rtmdet_s_syncbn_fast_1xb32-100e_ionogram |
 
 [训练过程可视化](https://wandb.ai/19211416/mmyolo-tools/reports/Object-Detection-for-Ionogram-Automatic-Scaling--VmlldzozNTI4NTk5)
 
