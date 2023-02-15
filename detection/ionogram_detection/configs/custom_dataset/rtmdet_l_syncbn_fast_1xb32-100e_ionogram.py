@@ -21,7 +21,6 @@ widen_factor = 1.0
 max_epochs = 100
 stage2_num_epochs = 20
 interval = 2
-# num_classes = 80
 
 train_batch_size_per_gpu = 8
 train_num_workers = 4
@@ -223,7 +222,7 @@ val_evaluator = dict(
 test_evaluator = dict(
     type='mmdet.CocoMetric',
     proposal_nums=(100, 1, 10),
-    ann_file=data_root + 'annotations/val.json',
+    ann_file=data_root + 'annotations/test.json',
     metric='bbox')
 
 # optimizer
@@ -254,15 +253,17 @@ param_scheduler = [
 
 # hooks
 default_hooks = dict(
+    param_scheduler=dict(
+        type='YOLOv5ParamSchedulerHook',
+        scheduler_type='cosine',
+        lr_factor=0.1,  # note
+        max_epochs=max_epochs),
     checkpoint=dict(
         type='CheckpointHook',
-        interval=interval,
-        max_keep_ckpts=0,  # only keep latest 3 checkpoints
-        save_best='auto'
-    ),
-    param_scheduler=dict(max_epochs=max_epochs)
-)
-
+        save_param_scheduler=False,
+        interval=25,
+        save_best='auto',
+        max_keep_ckpts=1))
 
 custom_hooks = [
     dict(
@@ -282,7 +283,7 @@ train_cfg = dict(
     type='EpochBasedTrainLoop',
     max_epochs=max_epochs,
     val_interval=interval,
-    val_begin = 10)
+    val_begin = 20)
 
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
