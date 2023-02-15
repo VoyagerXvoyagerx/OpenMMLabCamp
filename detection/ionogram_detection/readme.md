@@ -8,6 +8,27 @@
 
 利用中国科学院在海南、武汉、怀来获取的不同季节的4311张频高图建立数据集，人工标注出E层、Es-c层、Es-l层、F1层、F2层、Spread F层共6种结构。[download](https://drive.google.com/file/d/1MZUonB6E0o7lq_NndI-F3PEVkQH3C8pz/view?usp=sharing)
 
+File tree:
+
+```shell
+Iono4311/
+├── annotations
+│   ├── annotations_all.json
+│   ├── class_with_id.txt
+│   ├── test.json
+│   ├── train.json
+│   └── val.json
+├── classes_with_id.txt
+├── dataset_analysis.ipynb
+├── dataset.ipynb
+├── images
+├── labels
+├── test_images
+├── train_images
+└── val_images
+```
+
+
 数据预览
 
 ![标注好的图像示例](https://github.com/VoyagerXvoyagerx/OpenMMLabCamp/blob/main/detection/ionogram_detection/20130401070700.jpg "fig1")
