@@ -74,7 +74,7 @@ test 646 images
 
 4. 配置文件
 
-配置文件在路径/config/custom_dataset下
+配置文件在目录[/config/custom_dataset](/detection/ionogram_detection/config/custom_dataset)下
 
 5. 数据集可视化分析
 
@@ -109,7 +109,7 @@ python tools/analysis_tools/browse_dataset.py configs/custom_dataset/yolov5_m-v6
 
 ![数据增强](/detection/ionogram_detection//20191216074500.png)
 
-1. 修改Anchor尺寸
+7. 修改Anchor尺寸
 
 ```shell
 python tools/analysis_tools/optimize_anchors.py configs/custom_dataset/yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram.py \
