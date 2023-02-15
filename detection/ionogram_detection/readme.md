@@ -80,7 +80,7 @@ test 646 images
 
 ```shell
 python tools/analysis_tools/dataset_analysis.py configs/custom_dataset/yolov5_s-v61_syncbn_fast_1xb32-50e_ionogram.py \
-                                                --output-dir output
+                                                --out-dir output
 ```
 
 ![可视化分析](/detection/ionogram_detection/Dataset_bbox_area.jpg)
@@ -89,12 +89,27 @@ E、Es-l、Esc、F1类别以小目标居多，F2、Fspread类主要是中等大�
 
 6. 可视化config中的数据处理部分
 
+以YOLOv5-m为例：
+
 ```shell
-python tools/analysis_tools/browse_dataset.py configs/custom_dataset/yolov5_m-v61_syncbn_fast_1xb32-50e_ionogram.py \
---output-dir output --show-interval 1
+python tools/analysis_tools/browse_dataset.py configs/custom_dataset/yolov5_m-v61_syncbn_fast_1xb32-100e_ionogram.py \
+--out-dir output --show-interval 1
 ```
 
-7. 修改Anchor尺寸
+根据配置文件中的`train_pipeline`，训练时采用的数据增强策略包括：
+
+- 马赛克增强
+- 仿射变换
+- MixUp数据增强
+- Albumentations数据增强工具包（包括多种数字图像处理方法）
+- HSV随机增强图像
+- 随机水平翻转
+
+数据增强的可视化结果如下：
+
+![数据增强](/detection/ionogram_detection//20191216074500.png)
+
+1. 修改Anchor尺寸
 
 ```shell
 python tools/analysis_tools/optimize_anchors.py configs/custom_dataset/yolov5_s-v61_syncbn_fast_1xb32-100e_ionogram.py \
